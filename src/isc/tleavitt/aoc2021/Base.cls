@@ -5,9 +5,9 @@ Parameter Folder = "/irisdev/app/data/";
 
 ClassMethod GetInput(filename As %String) As %Stream
 {
-    set fn=..#Folder_filename
+    set fn = ..#Folder_filename
     set stream = ##Class(%Stream.FileCharacter).%New()
-    set sc=stream.LinkToFile(fn)
+    $$$ThrowOnError(stream.LinkToFile(fn))
     return stream
 }
 

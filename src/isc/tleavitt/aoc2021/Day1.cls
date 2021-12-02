@@ -3,7 +3,7 @@ Class isc.tleavitt.aoc2021.Day1 Extends isc.tleavitt.aoc2021.Base
 
 Parameter InputFile = "input1.txt";
 
-ClassMethod Run(verbose = 0) As %Integer
+ClassMethod Run() As %Integer
 {
     set stream = ..GetInput(..#InputFile)
     set count = 0
@@ -18,7 +18,7 @@ ClassMethod Run(verbose = 0) As %Integer
     return count
 }
 
-ClassMethod Run2(verbose = 0) As %Integer
+ClassMethod Run2() As %Integer
 {
     do ..GetInputArray(.array)
     set count = 0
