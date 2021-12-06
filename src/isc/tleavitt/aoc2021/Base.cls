@@ -8,6 +8,7 @@ ClassMethod GetInput(filename As %String) As %Stream
     set fn = ..#Folder_filename
     set stream = ##Class(%Stream.FileCharacter).%New()
     $$$ThrowOnError(stream.LinkToFile(fn))
+    set stream.LineTerminator = $c(13,10)
     return stream
 }
 
