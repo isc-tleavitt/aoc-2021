@@ -3,14 +3,16 @@ Class isc.tleavitt.aoc2021.Base
 
 Parameter Folder = "/irisdev/app/data/";
 
-ClassMethod Run() As %Integer
+ClassMethod Run() As %Integer [ Abstract ]
 {
     do ..GetInputArray(.array)
+    quit 0
 }
 
-ClassMethod Run2() As %Integer
+ClassMethod Run2() As %Integer [ Abstract ]
 {
     do ..GetInputArray(.array)
+    quit 0
 }
 
 ClassMethod GetInput(filename As %String) As %Stream

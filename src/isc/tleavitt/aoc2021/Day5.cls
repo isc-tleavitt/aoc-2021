@@ -4,6 +4,7 @@ Class isc.tleavitt.aoc2021.Day5 Extends isc.tleavitt.aoc2021.Base
 ClassMethod Run(careAboutDiagonals As %Boolean = 0) As %Integer
 {
     do ..GetInputArray(.array)
+    set map = "" // Make code quality happy. (It's wrong though, initializing with $increment is totally safe.)
     for i=1:1:array {
         set $listbuild(x1,y1) = $listfromstring($Piece(array(i)," "))
         set $listbuild(x2,y2) = $listfromstring($piece(array(i)," ",3))
