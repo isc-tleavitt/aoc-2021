@@ -66,6 +66,8 @@ ClassMethod Alphabetize(string As %String) As %String
 ClassMethod GetNumberCodes(patterns As %List, ByRef codes)
 {
     kill codes
+    set freq = "" // To make ObjectScript_Q happy...
+
     set real(0) = "abcefg"
     set real(1) = "cf"
     set real(2) = "acdeg"

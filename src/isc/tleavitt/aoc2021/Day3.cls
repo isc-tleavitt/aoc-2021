@@ -75,6 +75,10 @@ ClassMethod Run2() As %Integer [ PublicList = (o2array, co2array) ]
 
 ClassMethod MostCommonFirstBit(ByRef array) As %Integer [ PublicList = array ]
 {
+    if '$data(array) {
+        // simple case; here to make ObjectScript_Q happy.
+        quit 1
+    }
     set ref = "array"
     set total = 0
     set count = 0

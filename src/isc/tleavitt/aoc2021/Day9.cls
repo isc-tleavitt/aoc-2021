@@ -87,7 +87,7 @@ ClassMethod GetBasin(x As %Integer, y As %Integer, ByRef array, ByRef lowPoints,
         set yLower = y
         set point = $extract(array(y),x)
         if (point = 9) {
-            quit // Not part of any basin
+            quit 0 // Not part of any basin
         }
         set found = 0
         for dy=-1,1 {
@@ -110,7 +110,9 @@ ClassMethod GetBasin(x As %Integer, y As %Integer, ByRef array, ByRef lowPoints,
         set basin = ..GetBasin(xLower,yLower,.array,.lowPoints,.knownBasins)
     }
     set knownBasins(x,y) = basin
-    do $increment(lowPoints(2,basin))
+    if (basin '= 0) {
+        do $increment(lowPoints(2,basin))
+    }
     quit basin
 }
 
