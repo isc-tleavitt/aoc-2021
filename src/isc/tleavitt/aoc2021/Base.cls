@@ -32,4 +32,15 @@ ClassMethod GetInputArray(ByRef array, filename As %String = {"input"_$Piece($cl
     }
 }
 
+ClassMethod GetInput2DArray(Output array, filename As %String = {"input"_$Piece($classname(),"Day",2)_".txt"})
+{
+    do ..GetInputArray(.array, filename)
+    for i=1:1:array {
+        for j=1:1:$length(array(i)) {
+            set array(i,j) = $extract(array(i),j)
+        }
+        zkill array(i)
+    }
+}
+
 }
