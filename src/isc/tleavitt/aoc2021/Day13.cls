@@ -87,7 +87,7 @@ ClassMethod Print(ByRef map, Output count)
     }
 }
 
-ClassMethod GetYMax(ByRef map)
+ClassMethod GetYMax(ByRef map) As %Integer
 {
     set yMax = 0
     set x = ""
