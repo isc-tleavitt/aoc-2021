@@ -20,6 +20,7 @@ ClassMethod Run2() As %Integer
     do ..GetPuzzle(.polymer,.rules)
 
     // Translate polymer to its pairs
+    set polymerPairs = "" // Satisfy the objectscript_Q Continuum...
     for i=1:1:$length(polymer)-1 {
         do $increment(polymerPairs($extract(polymer,i,i+1)))
     }
@@ -83,7 +84,7 @@ ClassMethod FindMinAndMax(ByRef array, Output minElement, Output maxElement)
     }
 }
 
-ClassMethod DoInsertionsByPair(ByRef polymerPairs, ByRef rules) As %String
+ClassMethod DoInsertionsByPair(ByRef polymerPairs, ByRef rules)
 {
     set newPairs = ""
     set key = ""
